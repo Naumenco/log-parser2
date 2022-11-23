@@ -1,22 +1,28 @@
 import java.util.Scanner; // импорт сканера
-/*Дробная часть. Дана следующая сигнатура метода:
-public static double fraction(double x);
-        Необходимо реализовать метод таким образом, чтобы он возвращал только дробную часть числа х.
-        Подсказка: вещественное число может быть преобразовано к целому путем отбрасывания дробной части.
-        Пример:
-        x=5,3
-        результат: 0,3 */
+/*Сумма знаков. Дана следующая сигнатура метода:
+
+public static int sumLastNums(int x);
+Необходимо реализовать метод таким образом, чтобы он возвращал результат сложения двух последних знаков числа х,
+предполагая, что знаков в числе не менее двух.
+
+Подсказки:
+
+    int x=123%10; // х будет иметь значение 3
+    int у=123/10; // у будет иметь значение 12
+Пример:
+    x=4568
+    результат: 14
+ */
 public class Main {
     public static void main(String[] args) {
-        //System.out.println("Введите вещественное число (разделитель запятая): ");
-        //float floatNumber = new Scanner(System.in).nextFloat();
-        //double Number= 5.8;
-        System.out.println(fraction(7.7));
-        System.out.println(fraction(8));
-        System.out.println(fraction(0.5));
+        System.out.println("Введите целое число (знаков в числе не менее двух): ");
+        int intNumber = new Scanner(System.in).nextInt();
+        System.out.println(sumLastNums(intNumber));
         }
-    public static double fraction(double x)
-    {  int res=(int) x;
-            return x-res;
+    public static int sumLastNums(int x)
+    {
+        int firstRight = x%10;
+        int secondRight = (x%100-x%10)/10;
+            return firstRight+secondRight;
     }
 }
