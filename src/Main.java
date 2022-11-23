@@ -17,7 +17,7 @@ public class Main {
        // Scanner reader = new Scanner(System.in);
        // char charNumber = reader.next().charAt(0);
 
-        int myNum= 516;
+        int myNum= -16;
         System.out.println("результат: "+is2Digits(myNum));
         }
 
@@ -25,7 +25,7 @@ public class Main {
     {
 double xx= (double) x;
         //System.out.println(xx/100);
-        if ((xx/100<1)&&(xx/100>0.09)){return true;};
+        if (((xx/100<1)&&(xx/100>0.09))||((xx/100>-1)&&(xx/100<-0.09))){return true;};
         return false;
     }
 }
