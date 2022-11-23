@@ -1,16 +1,14 @@
 import java.util.Scanner; // импорт сканера
-/* Диапазон. Дана следующая сигнатура метода:
+/* Делитель. Дана следующая сигнатура метода:
 
-public static boolean isInRange(int a, int b, int num);
-Метод принимает левую и правую границу (a и b) некоторого числового диапазона.
-Необходимо реализовать метод таким образом, чтобы он возвращал true, если num входит в указанный диапазон (включая границы).
-Обратите внимание, что отношение a и b заранее неизвестно (неясно кто из них больше, а кто меньше)
+public static boolean isDivisor (int a, int b);
+Необходимо реализовать метод таким образом, чтобы он возвращал true если любое из принятых чисел делит другое нацело.
 
 Пример 1:
-a=5 b=1 num=3
+a=3 b=6
 результат: true
 Пример 2:
-a=2 b=15 num=33
+a=2 b=15
 результат: false
  */
 public class Main {
@@ -19,13 +17,13 @@ public class Main {
         // Scanner reader = new Scanner(System.in);
         // char charNumber = reader.next().charAt(0);
 
-        System.out.println("результат:" + isInRange(2, 15, 14));
+        System.out.println("результат:" + isDivisor(96, 16));
     }
-    public static boolean isInRange(int a, int b, int num)
+    public static boolean isDivisor (int a, int b)
     {
-        //System.out.println(a-b);
-        if ((a > b) && (a-b)>=num){return true;};
-        if ((a < b) && (b-a)>=num){return true;};
+       // System.out.println(a%b);
+       // System.out.println(b%a);
+        if ((a%b==0) || (b%a==0)) {return true;};
         return false;
     }
 }
