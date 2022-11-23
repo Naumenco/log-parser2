@@ -1,14 +1,16 @@
 import java.util.Scanner; // импорт сканера
-/* Большая буква. Дана следующая сигнатура метода:
+/* Диапазон. Дана следующая сигнатура метода:
 
-public static boolean isUpperCase(char x);
-Необходимо реализовать метод таким образом, чтобы он принимал символ x и возвращал true если это большая буква в диапазоне от ‘A’ до ‘Z’.
+public static boolean isInRange(int a, int b, int num);
+Метод принимает левую и правую границу (a и b) некоторого числового диапазона.
+Необходимо реализовать метод таким образом, чтобы он возвращал true, если num входит в указанный диапазон (включая границы).
+Обратите внимание, что отношение a и b заранее неизвестно (неясно кто из них больше, а кто меньше)
 
 Пример 1:
-x=’D’
+a=5 b=1 num=3
 результат: true
 Пример 2:
-x=’q’
+a=2 b=15 num=33
 результат: false
  */
 public class Main {
@@ -17,14 +19,13 @@ public class Main {
         // Scanner reader = new Scanner(System.in);
         // char charNumber = reader.next().charAt(0);
 
-        char myChar= 'D';
-        System.out.println(isUpperCase(myChar));
+        System.out.println("результат:" + isInRange(2, 15, 14));
     }
-    public static boolean isUpperCase(char x)
+    public static boolean isInRange(int a, int b, int num)
     {
-        int myNum = (int) x;
-        System.out.println(myNum);
-        if ((myNum>=65&&myNum<=90)){return true;};
+        //System.out.println(a-b);
+        if ((a > b) && (a-b)>=num){return true;};
+        if ((a < b) && (b-a)>=num){return true;};
         return false;
     }
 }
