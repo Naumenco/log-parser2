@@ -1,9 +1,15 @@
 import java.util.Scanner; // импорт сканера
-/*Букву в число. Дана следующая сигнатура метода:
+/* Есть ли позитив. Дана следующая сигнатура метода:
 
-public static int charToNum(char x);
-Метод принимает символ х, который представляет собой один из “0 1 2 3 4 5 6 7 8 9”. Необходимо реализовать метод таким
-образом, чтобы он преобразовывал символ в соответствующее число. Подсказка: код символа ‘0’ — это число 48.
+public static boolean isPositive(int x);
+        Необходимо реализовать метод таким образом, чтобы он принимал число x и возвращал true если оно положительное.
+
+        Пример 1:
+        x=3
+        результат: true
+        Пример 2:
+        x=-5
+        результат: false
  */
 public class Main {
     public static void main(String[] args) {
@@ -11,12 +17,15 @@ public class Main {
        // Scanner reader = new Scanner(System.in);
        // char charNumber = reader.next().charAt(0);
 
-        char myNum= '0';
-        System.out.println(charToNum(myNum));
+        int myNum= 10;
+        System.out.println("результат: "+isPositive(myNum));
         }
-    public static int charToNum(char x)
+
+    public static boolean isPositive(int x)
     {
-        char myChar = (char) x;
-        return myChar;
+        if (x>0){return true;};
+        if (x<0){return false;};
+        System.exit(10);
+        return false;
     }
 }
