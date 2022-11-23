@@ -1,15 +1,15 @@
 import java.util.Scanner; // импорт сканера
-/* Есть ли позитив. Дана следующая сигнатура метода:
+/* Двузначное. Дана следующая сигнатура метода:
 
-public static boolean isPositive(int x);
-        Необходимо реализовать метод таким образом, чтобы он принимал число x и возвращал true если оно положительное.
+public static boolean is2Digits(int x);
+Необходимо реализовать метод таким образом, чтобы он принимал число x и возвращал true если оно двузначное.
 
-        Пример 1:
-        x=3
-        результат: true
-        Пример 2:
-        x=-5
-        результат: false
+Пример 1:
+x=32
+результат: true
+Пример 2:
+x=516
+результат: false
  */
 public class Main {
     public static void main(String[] args) {
@@ -17,15 +17,15 @@ public class Main {
        // Scanner reader = new Scanner(System.in);
        // char charNumber = reader.next().charAt(0);
 
-        int myNum= 10;
-        System.out.println("результат: "+isPositive(myNum));
+        int myNum= 516;
+        System.out.println("результат: "+is2Digits(myNum));
         }
 
-    public static boolean isPositive(int x)
+    public static boolean is2Digits(int x)
     {
-        if (x>0){return true;};
-        if (x<0){return false;};
-        System.exit(10);
+double xx= (double) x;
+        //System.out.println(xx/100);
+        if ((xx/100<1)&&(xx/100>0.09)){return true;};
         return false;
     }
 }
