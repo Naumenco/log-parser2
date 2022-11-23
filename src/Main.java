@@ -1,28 +1,22 @@
 import java.util.Scanner; // импорт сканера
-/*Сумма знаков. Дана следующая сигнатура метода:
+/*Букву в число. Дана следующая сигнатура метода:
 
-public static int sumLastNums(int x);
-Необходимо реализовать метод таким образом, чтобы он возвращал результат сложения двух последних знаков числа х,
-предполагая, что знаков в числе не менее двух.
-
-Подсказки:
-
-    int x=123%10; // х будет иметь значение 3
-    int у=123/10; // у будет иметь значение 12
-Пример:
-    x=4568
-    результат: 14
+public static int charToNum(char x);
+Метод принимает символ х, который представляет собой один из “0 1 2 3 4 5 6 7 8 9”. Необходимо реализовать метод таким
+образом, чтобы он преобразовывал символ в соответствующее число. Подсказка: код символа ‘0’ — это число 48.
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Введите целое число (знаков в числе не менее двух): ");
-        int intNumber = new Scanner(System.in).nextInt();
-        System.out.println(sumLastNums(intNumber));
+       // System.out.println("Введите целое число (знаков в числе 1): ");
+       // Scanner reader = new Scanner(System.in);
+       // char charNumber = reader.next().charAt(0);
+
+        char myNum= '0';
+        System.out.println(charToNum(myNum));
         }
-    public static int sumLastNums(int x)
+    public static int charToNum(char x)
     {
-        int firstRight = x%10;
-        int secondRight = (x%100-x%10)/10;
-            return firstRight+secondRight;
+        char myChar = (char) x;
+        return myChar;
     }
 }
