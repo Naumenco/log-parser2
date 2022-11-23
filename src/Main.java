@@ -1,14 +1,15 @@
 import java.util.Scanner; // импорт сканера
-/* Делитель. Дана следующая сигнатура метода:
+/* Равенство. Дана следующая сигнатура метода:
 
-public static boolean isDivisor (int a, int b);
-Необходимо реализовать метод таким образом, чтобы он возвращал true если любое из принятых чисел делит другое нацело.
+public static boolean isEqual (int a, int b, int с);
+Необходимо реализовать метод таким образом, чтобы он возвращал true если все три полученных методом числа
+равны
 
 Пример 1:
-a=3 b=6
+a=3 b=3 с=3
 результат: true
 Пример 2:
-a=2 b=15
+a=2 b=15 с=2
 результат: false
  */
 public class Main {
@@ -17,13 +18,13 @@ public class Main {
         // Scanner reader = new Scanner(System.in);
         // char charNumber = reader.next().charAt(0);
 
-        System.out.println("результат:" + isDivisor(96, 16));
+        System.out.println("результат:" + isEqual(0, 0, 0));
     }
-    public static boolean isDivisor (int a, int b)
+    public static boolean isEqual (int a, int b, int с)
     {
        // System.out.println(a%b);
        // System.out.println(b%a);
-        if ((a%b==0) || (b%a==0)) {return true;};
+        if ((a==b)&& (b==с)) {return true;};
         return false;
     }
 }
