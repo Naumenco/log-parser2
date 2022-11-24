@@ -23,9 +23,6 @@ public class Main {
 
     public static boolean isPositive(int x)
     {
-        if (x>0){return true;};
-        if (x<0){return false;};
-        System.exit(10);
-        return false;
+        return x>0;
     }
 }
