@@ -1,17 +1,16 @@
 import java.util.Scanner; // импорт сканера
-/* Диапазон. Дана следующая сигнатура метода:
+/* Модуль числа. Дана следующая сигнатура метода:
 
-public static boolean isInRange(int a, int b, int num);
-Метод принимает левую и правую границу (a и b) некоторого числового диапазона.
-Необходимо реализовать метод таким образом, чтобы он возвращал true, если num входит в указанный диапазон (включая границы).
-Обратите внимание, что отношение a и b заранее неизвестно (неясно кто из них больше, а кто меньше)
+public static int abs(int x);
+Необходимо реализовать метод таким образом, чтобы он возвращал модуль числа х (если он был положительным,
+ то таким и остается, если он был отрицательным – то необходимо вернуть его без знака минус).
 
 Пример 1:
-a=5 b=1 num=3
-результат: true
+x=5
+результат: 5
 Пример 2:
-a=2 b=15 num=33
-результат: false
+x=-3
+результат: 3
  */
 public class Main {
     public static void main(String[] args) {
@@ -19,13 +18,12 @@ public class Main {
         // Scanner reader = new Scanner(System.in);
         // char charNumber = reader.next().charAt(0);
 
-        System.out.println("результат:" + isInRange(2, 15, 13));
+        System.out.println("результат:" + abs(-3));
     }
-    public static boolean isInRange(int a, int b, int num)
+    public static int abs(int x)
     {
         //System.out.println(a-b);
-        //if ((a > b) && (a-b)>=num){return true;};
-        //if ((a < b) && (b-a)>=num){return true;};
-        return (((a > b) && (a-b)>=num)||((a < b) && (b-a)>=num));
+        if (x<0){return x*(-1);};
+        return x;
     }
 }
