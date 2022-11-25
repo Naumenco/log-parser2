@@ -19,13 +19,13 @@ public class Main {
         // Scanner reader = new Scanner(System.in);
         // char charNumber = reader.next().charAt(0);
 
-        System.out.println("результат:" + isInRange(2, 15, 14));
+        System.out.println("результат:" + isInRange(2, 15, 13));
     }
     public static boolean isInRange(int a, int b, int num)
     {
         //System.out.println(a-b);
-        if ((a > b) && (a-b)>=num){return true;};
-        if ((a < b) && (b-a)>=num){return true;};
-        return false;
+        //if ((a > b) && (a-b)>=num){return true;};
+        //if ((a < b) && (b-a)>=num){return true;};
+        return (((a > b) && (a-b)>=num)||((a < b) && (b-a)>=num));
     }
 }
