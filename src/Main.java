@@ -16,7 +16,7 @@ public class Main {
         }
     public static int charToNum(char x)
     {
-        char myChar = (char) x;
-        return myChar;
+        //int myChar = (int) x;
+        return (int) x;
     }
 }
