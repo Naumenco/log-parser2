@@ -17,7 +17,7 @@ public class Main {
        // Scanner reader = new Scanner(System.in);
        // char charNumber = reader.next().charAt(0);
 
-        int myNum= -16;
+        int myNum= -56;
         System.out.println("результат: "+is2Digits(myNum));
         }
 
