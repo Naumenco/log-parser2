@@ -11,7 +11,7 @@ public class Main {
        // Scanner reader = new Scanner(System.in);
        // char charNumber = reader.next().charAt(0);
 
-        char myNum= '0';
+        char myNum= ' ';
         System.out.println(charToNum(myNum));
         }
     public static int charToNum(char x)
