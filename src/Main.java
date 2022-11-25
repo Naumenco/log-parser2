@@ -1,16 +1,17 @@
 import java.util.Scanner; // импорт сканера
-/* Модуль числа. Дана следующая сигнатура метода:
+/* Безопасное деление. Дана следующая сигнатура метода:
 
-public static int abs(int x);
-Необходимо реализовать метод таким образом, чтобы он возвращал модуль числа х (если он был положительным,
- то таким и остается, если он был отрицательным – то необходимо вернуть его без знака минус).
+public static int safeDiv(int x, int y);
+Необходимо реализовать метод таким образом, чтобы он возвращал деление x на y,
+и при этом гарантировал, что не будет выкинута ошибка деления на 0.
+При делении на 0 следует вернуть из метода число 0. Подсказка: смотри ограничения на операции типов данных.
 
 Пример 1:
-x=5
-результат: 5
+x=5  y=0
+результат: 0
 Пример 2:
-x=-3
-результат: 3
+x=8  y=2
+результат: 4
  */
 public class Main {
     public static void main(String[] args) {
@@ -18,12 +19,11 @@ public class Main {
         // Scanner reader = new Scanner(System.in);
         // char charNumber = reader.next().charAt(0);
 
-        System.out.println("результат:" + abs(-3));
+        System.out.println("результат:" + safeDiv(-27,0));
     }
-    public static int abs(int x)
+    public static int safeDiv(int x, int y)
     {
-        //System.out.println(a-b);
-        if (x<0){return x*(-1);};
-        return x;
+        if (y==0) {return 0;};
+        return x/y;
     }
 }
