@@ -17,7 +17,7 @@ x=31
 результат: “31 год”
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[]  args) {
         System.out.println("результат: " + age(72));
     }
     public static String age(int x)
