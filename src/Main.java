@@ -1,29 +1,26 @@
 import java.util.Scanner; // импорт сканера
-/* Строка сравнения. Дана следующая сигнатура метода:
+/* Тройной максимум. Дана следующая сигнатура метода:
 
-public static String makeDecision(int x, int y);
-Необходимо реализовать метод таким образом, чтобы он возвращал строку, которая включает два принятых методом числа и корректно выставленный знак операции сравнения (больше, меньше, или равно).
+public static int max3(int x, int y, int z);
+Необходимо реализовать метод таким образом, чтобы он возвращал максимальное из трех полученных методом чисел.
+ Подсказка: идеальное решение включает всего две инструкции if и не содержит вложенных if.
 
 Пример 1:
-x=5  y=7
-результат: “5 < 7”
+x=5  y=7  z=7
+результат: 7
 Пример 2:
-x=8  y=-1
-результат: “8 > -1”
-Пример 3:
-x=4  y=4
-результат: “4 == 4”
+x=8  y=-1   z=4
+результат: 8
  */
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("результат: " + makeDecision(13, 13));
+        System.out.println("результат: " + max3(-3, -7,-15));
     }
-    public static String makeDecision(int x, int y)
+    public static int max3(int x, int y, int z)
     {
-        if (x>y)  {return x+" > "+y;}
-        else if (x<y) {return x+" < "+y;}
-        else if (x==y) {return x+" == "+y;}
-        return "";
+        if ((x>y)&&(x>z)) {return x;}
+        if ((y>x)&&(y>z))  {return y;}
+        return z;
     }
 }
