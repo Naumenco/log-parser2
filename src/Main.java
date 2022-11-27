@@ -1,24 +1,25 @@
 import java.util.Scanner; // импорт сканера
-/* Тройная сумма. Дана следующая сигнатура метода:
+/* Двойная сумма. Дана следующая сигнатура метода:
 
-public static boolean sum3(int x, int y, int z);
-Необходимо реализовать метод таким образом, чтобы он возвращал true, если два любых числа (из трех принятых) можно сложить так, чтобы получить третье.
+public static int sum2(int x, int y);
+Необходимо реализовать метод таким образом, чтобы он возвращал сумму чисел x и y.
+Однако, если сумма попадает в диапазон от 10 до 19, то надо вернуть число 20.
 
 Пример 1:
-x=5  y=7  z=2
-результат: true
+x=5  y=7
+результат: 20
 Пример 2:
-x=8  y=-1   z=4
-результат: false
+x=8  y=-1
+результат: 7
  */
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("результат: " + sum3(5, 7,2));
+        System.out.println("результат: " + sum2(8, -1));
     }
-    public static boolean sum3(int x, int y, int z)
+    public static int sum2(int x, int y)
     {
-        if ((x+y==z) || (x+z==y) || (y+z==z)) {return true;}
-        return false;
+        if ((x+y>=10) && (x+y<=19)) {return 20;}
+        return x+y;
     }
 }
