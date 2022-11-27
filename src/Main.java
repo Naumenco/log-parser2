@@ -7,16 +7,12 @@ public static int charToNum(char x);
  */
 public class Main {
     public static void main(String[] args) {
-       // System.out.println("Введите целое число (знаков в числе 1): ");
-       // Scanner reader = new Scanner(System.in);
-       // char charNumber = reader.next().charAt(0);
 
-        char myNum= ' ';
+        char myNum= '3';
         System.out.println(charToNum(myNum));
         }
     public static int charToNum(char x)
     {
-        //int myChar = (int) x;
-        return (int) x;
+        return (int) x - 48;
     }
 }
