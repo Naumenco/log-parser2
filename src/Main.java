@@ -1,25 +1,29 @@
 import java.util.Scanner; // импорт сканера
-/* Диапазон. Дана следующая сигнатура метода:
+/* Строка сравнения. Дана следующая сигнатура метода:
 
-public static boolean isInRange(int a, int b, int num);
-Метод принимает левую и правую границу (a и b) некоторого числового диапазона.
-Необходимо реализовать метод таким образом, чтобы он возвращал true, если num входит в указанный диапазон (включая границы).
-Обратите внимание, что отношение a и b заранее неизвестно (неясно кто из них больше, а кто меньше)
+public static String makeDecision(int x, int y);
+Необходимо реализовать метод таким образом, чтобы он возвращал строку, которая включает два принятых методом числа и корректно выставленный знак операции сравнения (больше, меньше, или равно).
 
 Пример 1:
-a=5 b=1 num=3
-результат: true
+x=5  y=7
+результат: “5 < 7”
 Пример 2:
-a=2 b=15 num=33
-результат: false
+x=8  y=-1
+результат: “8 > -1”
+Пример 3:
+x=4  y=4
+результат: “4 == 4”
  */
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("результат:" + isInRange(15, -2, 10));
+        System.out.println("результат: " + makeDecision(13, 13));
     }
-    public static boolean isInRange(int a, int b, int num)
+    public static String makeDecision(int x, int y)
     {
-         return (((a > b) && (num<=a) && (num>=b)) || ((a < b) && (num>=a) && (num<=b)));
+        if (x>y)  {return x+" > "+y;}
+        else if (x<y) {return x+" < "+y;}
+        else if (x==y) {return x+" == "+y;}
+        return "";
     }
 }
