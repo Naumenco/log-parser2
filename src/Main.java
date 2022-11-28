@@ -1,46 +1,25 @@
 import java.util.Scanner; // импорт сканера
-/* Вывод дней недели. Дана следующая сигнатура метода:
+/*Числа подряд. Дана следующая сигнатура метода:
 
-public static void printDays(String x);
-В качестве параметра метод принимает строку, в которой записано название дня недели. Необходимо реализовать метод таким образом, чтобы он выводил на экран название переданного в него дня и всех последующих до конца недели дней. Если в качестве строки передан не день, то выводится текст “это не день недели”. Первый день понедельник, последний – воскресенье. Вместо if в данной задаче используйте switch.
+public static String listNums(int x);
+Необходимо реализовать метод таким образом, чтобы он возвращал строку, в которой будут записаны все числа от 0
+ до x (включительно).
 
 Пример:
-x=”четверг”
-результат:
-четверг
-пятница
-суббота
-воскресенье
-Пример:
-x=”чг”
-результат:
-это не день недели
+x=5
+результат: “0 1 2 3 4 5”
  */
 public class Main {
     public static void main(String[]  args) {
-        System.out.println("результат: ");
-                 printDays("среда");
+        System.out.println("результат: " + listNums(5));
+
     }
-    public static void printDays(String x)
-    {
-        switch (x) {
-            case "понедельник" :
-                System.out.println("понедельник");
-            case "вторник":
-                System.out.println("вторник");
-            case "среда":
-                System.out.println("среда");
-            case "четверг":
-                System.out.println("четверг");
-            case "пятница":
-                System.out.println("пятница");
-            case "суббота":
-                System.out.println("суббота");
-            case "воскресенье":
-                System.out.println("воскресенье");
-                break;
-            default:
-                System.out.println("это не день недели");}
-        return;
+    public static String listNums(int x)
+    { String s="";
+        for (int i=1; i<=x;i++)
+        {
+            s += String.valueOf(i)+" ";
+        }
+        return s;
     }
 }
