@@ -19,29 +19,23 @@ x=”чг”
 public class Main {
     public static void main(String[]  args) {
         System.out.println("результат: ");
-                 printDays("пятниц");
+                 printDays("среда");
     }
     public static void printDays(String x)
     {
         switch (x) {
             case "понедельник" :
-                System.out.println("понедельник вторник среда четверг пятница суббота воскресенье");
-                break;
+                System.out.println("понедельник");
             case "вторник":
-                System.out.println("вторник среда четверг пятница суббота воскресенье");
-                break;
+                System.out.println("вторник");
             case "среда":
-                System.out.println("среда четверг пятница суббота воскресенье");
-                break;
+                System.out.println("среда");
             case "четверг":
-                System.out.println("четверг пятница суббота воскресенье");
-                break;
+                System.out.println("четверг");
             case "пятница":
-                System.out.println("пятница суббота воскресенье");
-                break;
+                System.out.println("пятница");
             case "суббота":
-                System.out.println("суббота воскресенье");
-                break;
+                System.out.println("суббота");
             case "воскресенье":
                 System.out.println("воскресенье");
                 break;
