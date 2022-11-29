@@ -1,41 +1,42 @@
 import java.util.Scanner; // импорт сканера
-/* Правый треугольник. Дана следующая сигнатура метода:
+/* Угадайка. Дан следующий метод:
 
-public static void rightTriangle(int x);
-Необходимо реализовать метод таким образом, чтобы он выводил на экран треугольник из символов ‘*’ у
-которого х символов в высоту, а количество символов в ряду совпадает с номером строки,
-при этом треугольник выровнен по правому краю.
-1Подсказка: перед символами ‘*’ следует выводить необходимое количество пробелов.
+    public static void guessGame() {
+        int randomNum = 3;
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+        System.out.println("What number am I thinking (0 to 9)? :");
+        int x = sc.nextInt();
+        if (x != randomNum) {
+            System.out.println("No, try again");
+        } else {
+            System.out.println("Yes, it`s " + randomNum);
+        }
+    }
+Данный метод считывает с консоли введенное пользователем число и выводит, угадал ли пользователь то, что было загадано, или нет. Перепишите этот метод таким образом, чтобы он запускался до тех пор, пока пользователь не угадает число. После этого выведите на экран количество попыток, которое потребовалось пользователю, чтобы угадать число.
 
-Пример 1:
-x=3
-результат:
-    *
-  **
-***
-Пример 2:
-x=4
-результат:
-      *
-    **
-  ***
-****
+Ответом на задание является измененный метод.
  */
 public class Main {
     public static void main(String[] args) {
-        rightTriangle(4);
+        guessGame();
     }
-    public static void rightTriangle(int x)
-    {
-       for (int i = 1; i <= x; i++) {
-            for (int sp = 1; sp <= x - i; sp++) {
-                System.out.print("  ");
-            }
-            for (int j = 1; j <= i; j++) {
-                System.out.print("*");
-            }
-            System.out.println("");
-        }
-    }
-}
 
+    public static void guessGame() {
+        int randomNum = 3;
+        int x;
+        int count = 0;
+        do {
+            java.util.Scanner sc = new java.util.Scanner(System.in);
+            System.out.println("What number am I thinking (0 to 9)? :");
+            x = sc.nextInt();
+            count++;
+            if (x != randomNum) {
+                System.out.println("No, try again");
+            } else {
+                System.out.println("Yes, it`s " + randomNum);
+            }
+        } while (x != randomNum);
+        System.out.println("You spend " + count + " tries!");
+    }
+
+}
