@@ -1,30 +1,40 @@
 import java.util.Scanner; // импорт сканера
-/* Одинаковость. Дана следующая сигнатура метода:
+/* Квадрат. Дана следующая сигнатура метода:
 
-public static boolean equalNum(int x);
-Необходимо реализовать метод таким образом, чтобы он возвращал true, если все знаки числа одинаковы,
- и false в ином случае.
-Подсказки:
-int x=123%10; // х будет иметь значение 3
-int у=123/10; // у будет иметь значение 12
+public static void square(int x);
+Необходимо реализовать метод таким образом, чтобы он выводил на экран квадрат из символов ‘*’ размером х, у которого
+х символов в ряд и х символов в высоту. Подсказка: метод System.out.print выводит без перехода на следующую строку,
+в то время как System.out.println выводит с переходом.
 
 Пример 1:
-x=1111
-результат: true
+x=2
+результат:
+**
+**
 Пример 2:
-x=1211
-результат: false
+x=4
+результат:
+****
+****
+****
+****
  */
 public class Main {
     public static void main(String[]  args) {
-        System.out.println("результат: " + equalNum(22222));
+        square(7);
     }
-    public static boolean equalNum(int x)
-    { int c=x%10;
-         for (; x>0;x/=10)
-        {
-           if (x%10!=c) { return false;}
+    public static void square(int x)
+    {
+        int count=0;
+            for (int i=0; i<x*x; i++){
+                if (count==x)
+                {
+                    System.out.println (""); count =0;
+                }
+            count++;
+            System.out.print (" * ");
+            }
         }
-        return true;
-    }
+
 }
+
