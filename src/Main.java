@@ -12,13 +12,13 @@ x=5
 public class Main {
     public static void main(String[]  args) {
         System.out.println("результат: " + listNums(5));
-
     }
     public static String listNums(int x)
     { String s="";
         for (int i=1; i<=x;i++)
         {
-            s += String.valueOf(i)+" ";
+            s += i;
+            if (i<x ) {s += " ";}
         }
         return s;
     }
