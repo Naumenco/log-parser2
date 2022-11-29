@@ -1,25 +1,26 @@
 import java.util.Scanner; // импорт сканера
-/* Четные числа. Дана следующая сигнатура метода:
+/* Длина числа. Дана следующая сигнатура метода:
 
-public static String chet(int x);
-Необходимо реализовать метод таким образом, чтобы он возвращал строку, в которой будут записаны все
- четные числа от 0 до x (включительно). Подсказа для обеспечения качества кода:
- инструкцию if использовать не следует.
+public static int numLen(long x);
+Необходимо реализовать метод таким образом, чтобы он возвращал количество знаков в числе x.
 
+Подсказка:
+int у=123/10; // у будет иметь значение 12
 Пример:
-x=9
-результат: “0 2 4 6 8”
+x=12567
+результат: 5
  */
 public class Main {
-    public static void main(String[]  args) {
-        System.out.println("результат: " + chet(50));
+    public static void main(String[] args) {
+        System.out.println("результат: " + numLen(-52232343));
     }
-    public static String chet(int x)
-    { String s="";
-        for (int i=0; i<=x;i+=2)
+    public static int numLen(long x)
+    { int c=0;
+        if (x<0) {c++;}
+        for (; Math.abs(x)>0; x/=10)
         {
-            s += i+" ";
+            c++;
         }
-        return s;
+        return c;
     }
 }
