@@ -17,7 +17,9 @@ public class Main {
     { String s="";
         for (int i=x; i>=0;i--)
         {
-            s += String.valueOf(i)+" ";
+
+            if (i<x ) {s += " ";}
+            s += i;
         }
         return s;
     }
